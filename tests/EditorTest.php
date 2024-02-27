@@ -87,7 +87,6 @@ it('can check for carousel nodes', function () {
 
 });
 
-
 it('can check for slideshow nodes', function () {
 
     $with_slideshow = [
@@ -143,8 +142,6 @@ it('can check for slideshow nodes', function () {
         ],
     ];
 
-
-
     $editor_with_slideshow = (new Editor())->setContent($with_slideshow);
     $editor_without_slideshow = (new Editor())->setContent($no_slideshow);
 
@@ -152,8 +149,7 @@ it('can check for slideshow nodes', function () {
     expect($editor_without_slideshow->hasSlideshow())->toBeFalse();
 });
 
-
-it('can check for audio nodes', function(){
+it('can check for audio nodes', function () {
 
     $with_audio = [
         [
@@ -174,7 +170,6 @@ it('can check for audio nodes', function(){
             'attributes' => [],
         ],
     ];
-
 
     $editor_with_audio = (new Editor())->setContent($with_audio);
     $editor_without_audio = (new Editor())->setContent($no_audio);

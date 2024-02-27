@@ -1,6 +1,5 @@
 <?php
 
-
 it('can render a 2 column layout node', function () {
 
     $node = [
@@ -159,7 +158,6 @@ it('can render a 4 column layout node', function () {
 
     $html = new \SchoolSpider\SpiderEditor\Nodes\Layout($node);
     $html = $this->flattenHTML($html->render());
-
 
     expect($html)->toEqual('<div style="--dd-grid-columns: repeat(4, minmax(0, 1fr))"><div class="dd-column"><p>This is a paragraph</p></div><div class="dd-column"><p>This is a paragraph</p></div><div class="dd-column"><p>This is a paragraph</p></div><div class="dd-column"><p>This is a paragraph</p></div></div>');
 });

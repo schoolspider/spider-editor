@@ -38,7 +38,6 @@ it('can render an image node with attributes', function () {
 
 });
 
-
 it('can render an image node with attributes with falsy values', function () {
 
     $node = [
@@ -53,7 +52,6 @@ it('can render an image node with attributes with falsy values', function () {
             'data-foo' => false,
         ],
     ];
-
 
     $image = new \SchoolSpider\SpiderEditor\Nodes\Image($node);
     $html = $this->flattenHTML($image->render());

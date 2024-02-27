@@ -90,7 +90,6 @@ it('can render an image node', function () {
     expect($html)->toEqual('<div><img src="https://example.com/image.png" alt="Example image" class="dd-image" /></div>');
 });
 
-
 it('can render a 2 column layout node', function () {
 
     $node = [
@@ -259,7 +258,6 @@ it('can render a 4 column layout node', function () {
     expect($html)->toEqual('<div class="dd-layout" style="--dd-grid-columns: repeat(4, minmax(0, 1fr))"><div class="dd-column"><p>This is a paragraph</p></div><div class="dd-column"><p>This is a paragraph</p></div><div class="dd-column"><p>This is a paragraph</p></div><div class="dd-column"><p>This is a paragraph</p></div></div>');
 });
 
-
 it('can render a slideshow with 2 images', function () {
 
     $node = [
@@ -277,7 +275,7 @@ it('can render a slideshow with 2 images', function () {
                 'src' => 'https://example.com/image.png',
                 'thumbnail' => 'https://example.com/thumbnail.png',
                 'name' => 'Example image',
-            ]
+            ],
         ],
     ];
 
@@ -299,10 +297,5 @@ it('can render a slideshow with 2 images', function () {
 
     expect($anchors->item(1)->getAttribute('href'))->toEqual('https://example.com/image.png');
     expect($anchors->item(1)->getAttribute('data-lightbox'))->toEqual('my-slideshow');
-
-
-
-
-
 
 });

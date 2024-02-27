@@ -6,11 +6,11 @@ it('can render a slideshow node', function () {
         'type' => 'slideshow',
         'id' => 'my-slideshow',
         'content' => [
-           [
-               'src' => 'https://example.com/image.png',
-               'thumbnail' => 'https://example.com/thumbnail.png',
-               'name' => 'Example image',
-           ]
+            [
+                'src' => 'https://example.com/image.png',
+                'thumbnail' => 'https://example.com/thumbnail.png',
+                'name' => 'Example image',
+            ],
         ],
         'attributes' => [],
     ];

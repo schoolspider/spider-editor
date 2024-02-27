@@ -43,7 +43,6 @@ it('can render a heading node with attributes with falsy values', function () {
         ],
     ];
 
-
     $heading = new \SchoolSpider\SpiderEditor\Nodes\Heading($node);
 
     $headingEl = $this->document($heading->render())->getElementsByTagName('h2')->item(0);
