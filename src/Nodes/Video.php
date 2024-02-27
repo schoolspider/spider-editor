@@ -12,7 +12,7 @@ class Video extends Node
     {
         $content = $this->node['content']['src'] ?? '';
 
-        if($this->getType() === 'embed'){
+        if ($this->getType() === 'embed') {
             $dom = new \DOMDocument();
             $dom->loadHTML($content);
 
@@ -32,14 +32,14 @@ class Video extends Node
         return $this->node['content']['name'] ?? '';
     }
 
-    public function getType(){
+    public function getType()
+    {
         return $this->node['content']['type'] ?? 'stored';
     }
 
     public function render()
     {
-        if($this->getType() === 'stored'){
-
+        if ($this->getType() === 'stored') {
 
             return <<<EOT
             <div class="dd-video-container">
@@ -50,7 +50,7 @@ class Video extends Node
             EOT;
         }
 
-        if($this->getType() === 'embed'){
+        if ($this->getType() === 'embed') {
             return <<<EOT
             <div class="dd-video-container">
                {$this->getSrc()}
