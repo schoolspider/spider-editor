@@ -25,8 +25,21 @@ composer require schoolspider/spider-editor
 ## Usage
 
 ```php
-$skeleton = new SchoolSpider\SpiderEditor();
-echo $skeleton->echoPhrase('Hello, SchoolSpider!');
+$editor = new SchoolSpider\SpiderEditor\Editor();
+$editor->setContent([
+    [
+        'type' => 'heading',
+        'level' => 1,
+        'content' => 'This is my heading',
+    ],
+    [
+        'type' => 'content',
+        'content' => '<p>This is my content</p>',
+    ],
+]);
+
+$html = $editor->toHTML();
+// <h1>This is my heading</h1><p>This is my content</p>
 ```
 
 ## Testing
