@@ -19,6 +19,10 @@ class Editor
     public function setContent($value): self
     {
 
+        if(! $value) {
+            return $this;
+        }
+
         match ($this->getContentType($value)) {
             'JSON' => $this->document = json_decode($value, true),
             'HTML' => $this->document = $value,
