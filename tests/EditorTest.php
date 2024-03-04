@@ -179,17 +179,16 @@ it('can check for audio nodes', function () {
 
 });
 
-
 it('can render nothing', function () {
 
     $editor = (new Editor())->setContent(null);
 
-    expect($editor->toHTML())->toEqual("");
+    expect($editor->toHTML())->toEqual('');
 });
 
 it('can render an empty string', function () {
 
-    $editor = (new Editor())->setContent("");
+    $editor = (new Editor())->setContent('');
 
-    expect($editor->toHTML())->toEqual("");
+    expect($editor->toHTML())->toEqual('');
 });
