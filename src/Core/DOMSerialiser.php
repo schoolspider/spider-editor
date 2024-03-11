@@ -10,6 +10,7 @@ use SchoolSpider\SpiderEditor\Nodes\Heading;
 use SchoolSpider\SpiderEditor\Nodes\Image;
 use SchoolSpider\SpiderEditor\Nodes\Layout;
 use SchoolSpider\SpiderEditor\Nodes\Slideshow;
+use SchoolSpider\SpiderEditor\Nodes\Table;
 use SchoolSpider\SpiderEditor\Nodes\Video;
 
 class DOMSerialiser
@@ -44,6 +45,7 @@ class DOMSerialiser
             'carousel' => $this->parseCarousel($node),
             'video' => $this->parseVideo($node),
             'audio' => $this->parseAudio($node),
+            'table' => $this->parseTable($node),
             default => ''
         };
 
@@ -100,5 +102,10 @@ class DOMSerialiser
     public function parseAudio($node)
     {
         return (new Audio($node))->addClass('dd-audio')->render();
+    }
+
+    public function parseTable($node)
+    {
+        return (new Table($node))->addClass('dd-table')->render();
     }
 }
