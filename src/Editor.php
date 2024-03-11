@@ -19,7 +19,7 @@ class Editor
     public function setContent($value): self
     {
 
-        if(! $value) {
+        if (! $value) {
             return $this;
         }
 
