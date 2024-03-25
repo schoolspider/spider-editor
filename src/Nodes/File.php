@@ -15,8 +15,10 @@ class File extends Node
 
     public function render()
     {
+        $this->addClass('file');
+
         return <<<EOT
-            <div class="dd-file">
+            <div class="dd-file-container">
                 <a{$this->renderAttributes()} download>{$this->renderContent()}</a>
             </div>
         EOT;

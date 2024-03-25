@@ -81,7 +81,7 @@ class DOMSerialiser
 
     private function parseFiles($node)
     {
-        return (new Files($node))->addClass('dd-file-gallery')->render();
+        return (new Files($node))->addClass('file_gallery')->render();
     }
 
     private function parseSlideshow($node)
