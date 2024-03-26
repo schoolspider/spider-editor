@@ -8,12 +8,12 @@ class Heading extends Node
 {
     protected $type = 'heading';
 
-    protected $level = 2;
+    protected $level = 1;
 
     public function __construct(array $node = [])
     {
         parent::__construct($node);
-        $this->level = $node['level'] ?? 2;
+        $this->level = $node['level'] ?? 1;
     }
 
     public function setLevel(int $level): self
