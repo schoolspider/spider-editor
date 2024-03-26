@@ -3,15 +3,16 @@
 namespace SchoolSpider\SpiderEditor\Core;
 
 use SchoolSpider\SpiderEditor\Nodes\Audio;
-use SchoolSpider\SpiderEditor\Nodes\Carousel;
-use SchoolSpider\SpiderEditor\Nodes\Column;
 use SchoolSpider\SpiderEditor\Nodes\Files;
-use SchoolSpider\SpiderEditor\Nodes\Heading;
 use SchoolSpider\SpiderEditor\Nodes\Image;
-use SchoolSpider\SpiderEditor\Nodes\Layout;
-use SchoolSpider\SpiderEditor\Nodes\Slideshow;
 use SchoolSpider\SpiderEditor\Nodes\Table;
 use SchoolSpider\SpiderEditor\Nodes\Video;
+use SchoolSpider\SpiderEditor\Nodes\Column;
+use SchoolSpider\SpiderEditor\Nodes\Layout;
+use SchoolSpider\SpiderEditor\Nodes\Content;
+use SchoolSpider\SpiderEditor\Nodes\Heading;
+use SchoolSpider\SpiderEditor\Nodes\Carousel;
+use SchoolSpider\SpiderEditor\Nodes\Slideshow;
 
 class DOMSerialiser
 {
@@ -61,7 +62,7 @@ class DOMSerialiser
 
     private function parseContent($node)
     {
-        return $node['content'];
+        return (new Content($node))->render();
     }
 
     private function parseLayout($node)
