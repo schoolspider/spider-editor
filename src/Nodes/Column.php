@@ -24,7 +24,6 @@ class Column extends Node
     {
         $this->removeAllStyles();
 
-
         return "<div{$this->renderAttributes()}>{$this->renderChildren()}</div>";
     }
 }
