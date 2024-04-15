@@ -21,7 +21,7 @@ class Node
 
         foreach ($attrs as $key => $value) {
             match ($key) {
-                'style' => $this->styles = $value,
+                'style' => $this->styles = is_array($value) ? $value : explode(';', $value),
                 'class' => $this->classes = explode(' ', $value),
                 default => $this->attributes[$key] = $value
             };
