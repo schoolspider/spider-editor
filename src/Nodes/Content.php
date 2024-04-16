@@ -13,7 +13,7 @@ class Content extends Node
 
         $dom = new \DOMDocument();
         $dom->encoding = 'UTF-8';
-        $dom->loadHTML('<meta http-equiv="Content-Type" content="charset=utf-8" /><div>' . ($this->node['content']) . '</div>');
+        $dom->loadHTML('<meta http-equiv="Content-Type" content="charset=utf-8" /><div>'.($this->node['content']).'</div>');
 
         $images = $dom->getElementsByTagName('img');
 
