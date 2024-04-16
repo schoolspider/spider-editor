@@ -10,8 +10,10 @@ class Content extends Node
 
     public function render()
     {
+
         $dom = new \DOMDocument();
-        $dom->loadHTML($this->node['content']);
+        $dom->encoding = 'UTF-8';
+        $dom->loadHTML('<meta http-equiv="Content-Type" content="charset=utf-8" /><div>' . ($this->node['content']) . '</div>');
 
         $images = $dom->getElementsByTagName('img');
 
@@ -45,6 +47,14 @@ class Content extends Node
             $image->setAttribute('class', 'dd-responsive-image');
         }
 
-        return $dom->saveHTML();
+        $html = '';
+
+        $div = $dom->getElementsByTagName('div')->item(0);
+
+        foreach ($div->childNodes as $child) {
+            $html .= $dom->saveHTML($child);  // Concatenate HTML of each child
+        }
+
+        return $html;
     }
 }
