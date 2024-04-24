@@ -16,6 +16,7 @@ class File extends Node
     public function render()
     {
         $this->addClass('file');
+        $this->addAttribute('href', $this->node['src']);
 
         return <<<EOT
             <div class="dd-file-container">

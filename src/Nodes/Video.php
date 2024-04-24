@@ -12,16 +12,23 @@ class Video extends Node
     {
         $content = $this->node['content']['src'] ?? '';
 
+
         if ($this->getType() === 'embed') {
             $dom = new \DOMDocument();
-            $dom->loadHTML($content);
+            @$dom->loadHTML($content);
 
             $iframe = $dom->getElementsByTagName('iframe')->item(0);
-            $iframe->removeAttribute('width');
-            $iframe->removeAttribute('height');
+
+            if(!$iframe) {
+                @$dom->loadHTML('<iframe src="' . $content . '" allowfullscreen frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>');
+                $iframe = $dom->getElementsByTagName('iframe')->item(0);
+            }
+
+            $iframe?->removeAttribute('width');
+            $iframe?->removeAttribute('height');
+
 
             $content = $dom->saveHTML($iframe);
-
         }
 
         return $content;
