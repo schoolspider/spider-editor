@@ -44,7 +44,7 @@ class Video extends Node
 
     public function render()
     {
-        if ($this->getType() === 'stored') {
+        if (in_array($this->getType(), ['stored', 'file'])) {
 
             return <<<EOT
             <div class="dd-video-container">
