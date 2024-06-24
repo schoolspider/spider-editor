@@ -17,7 +17,7 @@
     ],
     "require": {
         "php": "^8.1",
-        "illuminate/support": "^10.45"
+        "illuminate/support": "^11.11"
     },
     "require-dev": {
         "pestphp/pest": "^2.15",
